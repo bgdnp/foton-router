@@ -6,8 +6,6 @@ class RouteResolver
 {
     public function resolve(string $requestPath, array $routes)
     {
-
-
         foreach ($routes as $definedPath => $route) {
             if ($matchedRoute = $this->testRoute($requestPath, $definedPath, $route)) {
                 return $matchedRoute;
