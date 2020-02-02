@@ -46,6 +46,13 @@ class Route
     {
         preg_match_all('/\[([^\]]+)\]/', $path, $matches);
 
-        $this->parameters = $matches[1];
+        $this->parameters = array_flip($matches[1]);
+    }
+
+    public function setParameter($key, $value)
+    {
+        if (array_key_exists($key, $this->parameters)) {
+            $this->parameters[$key] = $value;
+        }
     }
 }

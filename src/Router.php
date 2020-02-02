@@ -30,11 +30,23 @@ class Router
 
     public function run()
     {
-        var_dump($this->routes);
+        $route = $this->resolveRequestRoute();
+
+        return $this->container->parameters($route->parameters)->invoke($route->controller, $route->method);
     }
 
     public function setControllerNamespace(string $namespace)
     {
         $this->namespace = $namespace;
+    }
+
+    protected function resolveRequestRoute()
+    {
+        $requestRoute = $this->request->query('route', '/');
+        $httpMethod = 'get';
+
+        $resolver = $this->container->get(RouteResolver::class);
+
+        return $resolver->resolve($requestRoute, $this->routes[$httpMethod]);
     }
 }
