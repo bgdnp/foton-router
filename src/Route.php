@@ -10,11 +10,11 @@ class Route
     public $method;
     public $parameters;
 
-    public function __construct(string $httpMethod, string $path, array $args)
+    public function __construct(string $httpMethod, string $path, array $args, string $namespace)
     {
         $this->httpMethod = $httpMethod;
         $this->setPath($path);
-        $this->setController($args);
+        $this->setController($args, $namespace);
         $this->setMethod($args);
         $this->setParameters($path);
     }
@@ -24,13 +24,18 @@ class Route
         $this->path = '/' . trim($path, ' /');
     }
 
-    protected function setController(array $args)
+    protected function setController(array $args, string $namespace)
     {
         if (empty($args[1])) {
             $args = explode('@', $args[0]);
         }
 
-        $this->controller = $args[0];
+        $namespace = '\\' . trim($namespace, '\\');
+        $namespace = str_replace('/', '\\', $namespace);
+        $controller = '\\' . trim($args[0], '\\');
+        $controller = str_replace('/', '\\', $controller);
+
+        $this->controller = $namespace . $controller;
     }
 
     protected function setMethod(array $args)

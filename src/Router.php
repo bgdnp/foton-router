@@ -22,6 +22,7 @@ class Router
     public function define(callable $defineFunction)
     {
         $builder = $this->container->get(RouteBuilder::class);
+        $builder->setControllerNamespace($this->namespace);
 
         $defineFunction($builder);
 
