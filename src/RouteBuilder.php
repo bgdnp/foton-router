@@ -28,6 +28,6 @@ class RouteBuilder
     {
         $route = new Route($httpMethod, $path, $args, $this->namespace);
 
-        $this->routes[$httpMethod][$route->path] = $route;
+        $this->routes[$httpMethod][$route->path()] = $route;
     }
 }

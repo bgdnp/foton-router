@@ -33,7 +33,9 @@ class Router
     {
         $route = $this->resolveRequestRoute();
 
-        return $this->container->parameters($route->parameters)->invoke($route->controller, $route->method);
+        $result = $route->execute($this->container);
+
+        return $result;
     }
 
     public function setControllerNamespace(string $namespace)

@@ -2,13 +2,15 @@
 
 namespace Bgdnp\Foton\Http;
 
+use Bgdnp\Foton\DI\Container;
+
 class Route
 {
-    public $httpMethod;
-    public $path;
-    public $controller;
-    public $method;
-    public $parameters;
+    protected $httpMethod;
+    protected $path;
+    protected $controller;
+    protected $method;
+    protected $parameters;
 
     public function __construct(string $httpMethod, string $path, array $args, string $namespace)
     {
@@ -17,6 +19,25 @@ class Route
         $this->setController($args, $namespace);
         $this->setMethod($args);
         $this->setParameters($path);
+    }
+
+    public function path()
+    {
+        return $this->path;
+    }
+
+    public function setParameter($key, $value)
+    {
+        $key = str_replace(['[', ']'], '', $key);
+
+        if (array_key_exists($key, $this->parameters)) {
+            $this->parameters[$key] = $value;
+        }
+    }
+
+    public function execute(Container $container)
+    {
+        return $container->parameters($this->parameters)->invoke($this->controller, $this->method);
     }
 
     protected function setPath(string $path)
@@ -52,12 +73,5 @@ class Route
         preg_match_all('/\[([^\]]+)\]/', $path, $matches);
 
         $this->parameters = array_flip($matches[1]);
-    }
-
-    public function setParameter($key, $value)
-    {
-        if (array_key_exists($key, $this->parameters)) {
-            $this->parameters[$key] = $value;
-        }
     }
 }
