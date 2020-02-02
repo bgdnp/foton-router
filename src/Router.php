@@ -8,6 +8,7 @@ class Router
 {
     protected $container;
     protected $request;
+    protected $response;
 
     protected $namespace;
 
@@ -17,6 +18,7 @@ class Router
     {
         $this->container = $container;
         $this->request = $container->get(Request::class);
+        $this->response = $container->get(Response::class);
     }
 
     public function define(callable $defineFunction)
@@ -35,7 +37,7 @@ class Router
 
         $result = $route->execute($this->container);
 
-        return $result;
+        return $this->response->send($result);
     }
 
     public function setControllerNamespace(string $namespace)
