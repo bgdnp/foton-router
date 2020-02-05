@@ -7,7 +7,10 @@ class RouteBuilder
     protected $namespace;
     protected $routes = [
         'get' => [],
-        'post' => []
+        'post' => [],
+        'put' => [],
+        'patch' => [],
+        'delete' => [],
     ];
 
     public function routes(): array
@@ -25,6 +28,27 @@ class RouteBuilder
     public function post(string $path, ...$args)
     {
         $this->createRoute('post', $path, $args);
+
+        return $this;
+    }
+
+    public function put(string $path, ...$args)
+    {
+        $this->createRoute('put', $path, $args);
+
+        return $this;
+    }
+
+    public function patch(string $path, ...$args)
+    {
+        $this->createRoute('patch', $path, $args);
+
+        return $this;
+    }
+
+    public function delete(string $path, ...$args)
+    {
+        $this->createRoute('delete', $path, $args);
 
         return $this;
     }
