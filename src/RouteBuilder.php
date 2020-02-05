@@ -6,7 +6,8 @@ class RouteBuilder
 {
     protected $namespace;
     protected $routes = [
-        'get' => []
+        'get' => [],
+        'post' => []
     ];
 
     public function routes(): array
@@ -17,6 +18,15 @@ class RouteBuilder
     public function get(string $path, ...$args)
     {
         $this->createRoute('get', $path, $args);
+
+        return $this;
+    }
+
+    public function post(string $path, ...$args)
+    {
+        $this->createRoute('post', $path, $args);
+
+        return $this;
     }
 
     public function setControllerNamespace(string $namespace)

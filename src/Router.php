@@ -48,7 +48,7 @@ class Router
     protected function resolveRequestRoute()
     {
         $requestRoute = $this->request->query('route', '/');
-        $httpMethod = 'get';
+        $httpMethod = $this->request->httpMethod();
 
         $resolver = $this->container->get(RouteResolver::class);
 
