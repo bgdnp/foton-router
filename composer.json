@@ -10,11 +10,12 @@
     }
   ],
   "require": {
-    "bgdnp/foton-di": "^0.1.0"
+    "bgdnp/foton-di": "^0.1.0",
+    "bgdnp/foton-http": "^0.1.0"
   },
   "autoload": {
     "psr-4": {
-      "Bgdnp\\Foton\\Http\\": "src/"
+      "Bgdnp\\FotonRouter\\": "src/"
     }
   }
 }

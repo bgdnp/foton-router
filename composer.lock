@@ -1,99 +1,136 @@
 {
-  "_readme": [
-    "This file locks the dependencies of your project to a known state",
-    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-    "This file is @generated automatically"
-  ],
-  "content-hash": "cd1168a19bc145a886b8e7fb4d4d7893",
-  "packages": [
-    {
-      "name": "bgdnp/foton-di",
-      "version": "v0.1.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/bgdnp/foton-di.git",
-        "reference": "444cccc6cc383cf06514ec2841c597fc116d381e"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/bgdnp/foton-di/zipball/444cccc6cc383cf06514ec2841c597fc116d381e",
-        "reference": "444cccc6cc383cf06514ec2841c597fc116d381e",
-        "shasum": ""
-      },
-      "require": {
-        "psr/container": "^1.0"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "Bgdnp\\Foton\\DI\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": ["MIT"],
-      "authors": [
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "7678fb030b1d95a328ef4480e5311d95",
+    "packages": [
         {
-          "name": "Bogdan Petkovic",
-          "email": "bogdanpetkovic@outlook.com"
-        }
-      ],
-      "description": "Simple PHP dependency injection",
-      "time": "2020-02-01T14:09:26+00:00"
-    },
-    {
-      "name": "psr/container",
-      "version": "1.0.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/php-fig/container.git",
-        "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-        "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=5.3.0"
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-master": "1.0.x-dev"
-        }
-      },
-      "autoload": {
-        "psr-4": {
-          "Psr\\Container\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": ["MIT"],
-      "authors": [
+            "name": "bgdnp/foton-di",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bgdnp/foton-di.git",
+                "reference": "1c1d14d2f73ff2a5b5a15e717f3980e439690f63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bgdnp/foton-di/zipball/1c1d14d2f73ff2a5b5a15e717f3980e439690f63",
+                "reference": "1c1d14d2f73ff2a5b5a15e717f3980e439690f63",
+                "shasum": ""
+            },
+            "require": {
+                "psr/container": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bgdnp\\FotonDI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bogdan Petkovic",
+                    "email": "bogdanpetkovic@outlook.com"
+                }
+            ],
+            "description": "Simple PHP dependency injection",
+            "time": "2020-02-29T18:59:19+00:00"
+        },
         {
-          "name": "PHP-FIG",
-          "homepage": "http://www.php-fig.org/"
+            "name": "bgdnp/foton-http",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bgdnp/foton-http.git",
+                "reference": "96e12d90cb1e7b17f6649f9273c41cbf7dfc30cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bgdnp/foton-http/zipball/96e12d90cb1e7b17f6649f9273c41cbf7dfc30cd",
+                "reference": "96e12d90cb1e7b17f6649f9273c41cbf7dfc30cd",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bgdnp\\FotonHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bogdan Petkovic",
+                    "email": "bogdanpetkovic@outlook.com"
+                }
+            ],
+            "description": "Simple PHP Http handling",
+            "time": "2020-02-29T18:48:18+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
         }
-      ],
-      "description": "Common Container Interface (PHP FIG PSR-11)",
-      "homepage": "https://github.com/php-fig/container",
-      "keywords": [
-        "PSR-11",
-        "container",
-        "container-interface",
-        "container-interop",
-        "psr"
-      ],
-      "time": "2017-02-14T16:28:37+00:00"
-    }
-  ],
-  "packages-dev": [],
-  "aliases": [],
-  "minimum-stability": "stable",
-  "stability-flags": [],
-  "prefer-stable": false,
-  "prefer-lowest": false,
-  "platform": [],
-  "platform-dev": []
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
 }

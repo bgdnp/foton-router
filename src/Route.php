@@ -1,8 +1,8 @@
 <?php
 
-namespace Bgdnp\Foton\Http;
+namespace Bgdnp\FotonRouter;
 
-use Bgdnp\Foton\DI\Container;
+use Bgdnp\FotonDI\Container;
 
 class Route
 {
